@@ -1,8 +1,6 @@
-const App = () =>
-    (
-        <div>
-          KBMAPS
-        </div>
-    )
+import React from 'react';
+import MainPage from './components/MainPage';
+
+const App = () => <MainPage />;
 
 export default App;
