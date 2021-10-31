@@ -15,6 +15,7 @@
     "rules": {
         "linebreak-style": ["error", "windows"],
         "arrow-parens": ["error", "as-needed"],
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "comma-dangle": ["error", "never"]
     }
 }
