@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Divider, IconButton, Grid } from '@mui/material';
+import { Box, IconButton, Grid } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
-import { ChevronRight, MenuOutlined } from '@mui/icons-material';
+import { ChevronRight } from '@mui/icons-material';
+import SmallSideBar from './SmallSideBar';
 
 const openedMixin = () => ({
 	width: '15%',
@@ -16,6 +17,7 @@ const closedMixin = () => ({
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: prop => prop !== 'open' })(({ open }) => ({
 	width: '15%',
+	height: '100%',
 	...(open && {
 		...openedMixin(),
 		'& .MuiDrawer-paper': openedMixin(),
@@ -46,12 +48,9 @@ export default () => {
 							<ChevronRight />
 						</IconButton>
 					) : (
-						<IconButton onClick={handleDrawerOpen}>
-							<MenuOutlined />
-						</IconButton>
+						<SmallSideBar />
 					)}
 				</Grid>
-				<Divider />
 			</Drawer>
 		</Box>
 	);
