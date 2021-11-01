@@ -6,52 +6,52 @@ import { ChevronRight } from '@mui/icons-material';
 import SmallSideBar from './SmallSideBar';
 
 const openedMixin = () => ({
-	width: '15%',
-	overflowX: 'hidden',
+  width: '15%',
+  overflowX: 'hidden'
 });
 
 const closedMixin = () => ({
-	overflowX: 'hidden',
-	width: '5%',
+  overflowX: 'hidden',
+  width: '5%'
 });
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: prop => prop !== 'open' })(({ open }) => ({
-	width: '15%',
-	height: '100%',
-	...(open && {
-		...openedMixin(),
-		'& .MuiDrawer-paper': openedMixin(),
-	}),
-	...(!open && {
-		...closedMixin(),
-		'& .MuiDrawer-paper': closedMixin(),
-	}),
+  width: '15%',
+  height: '100%',
+  ...(open && {
+    ...openedMixin(),
+    '& .MuiDrawer-paper': openedMixin()
+  }),
+  ...(!open && {
+    ...closedMixin(),
+    '& .MuiDrawer-paper': closedMixin()
+  })
 }));
 
 export default () => {
-	const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true);
 
-	const handleDrawerOpen = () => {
-		setOpen(true);
-	};
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
-	const handleDrawerClose = () => {
-		setOpen(false);
-	};
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
-	return (
-		<Box sx={{ display: 'flex' }}>
-			<Drawer variant='permanent' open={open} anchor={'left'}>
-				<Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
-					{open ? (
-						<IconButton onClick={handleDrawerClose}>
-							<ChevronRight />
-						</IconButton>
-					) : (
-						<SmallSideBar handleDrawerOpen={handleDrawerOpen} />
-					)}
-				</Grid>
-			</Drawer>
-		</Box>
-	);
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <Drawer variant='permanent' open={open} anchor={'left'}>
+        <Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
+          {open ? (
+            <IconButton onClick={handleDrawerClose}>
+              <ChevronRight />
+            </IconButton>
+          ) : (
+            <SmallSideBar handleDrawerOpen={handleDrawerOpen} />
+          )}
+        </Grid>
+      </Drawer>
+    </Box>
+  );
 };
