@@ -1,4 +1,4 @@
 import React from 'react';
-import { ApolloThemeProvider } from './ThemeProvider';
+import { AppThemeProvider } from './ThemeProvider';
 
-export const AppProviders = ({ children }) => <ApolloThemeProvider>{children}</ApolloThemeProvider>;
+export const AppProviders = ({ children }) => <AppThemeProvider>{children}</AppThemeProvider>;
