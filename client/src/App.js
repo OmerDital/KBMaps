@@ -3,9 +3,9 @@ import MainPage from './components/MainPage';
 import { AppProviders } from './Providers';
 
 const App = () => (
-	<AppProviders>
-		<MainPage />
-	</AppProviders>
+  <AppProviders>
+    <MainPage />
+  </AppProviders>
 );
 
 export default App;
