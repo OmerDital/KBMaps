@@ -42,13 +42,13 @@ export default () => {
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<Drawer variant='permanent' open={open} anchor={'right'}>
-				<Grid container direction='Column' justifyContent='center' alignItems='flex-end'>
+				<Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
 					{open ? (
 						<IconButton onClick={handleDrawerClose}>
 							<ChevronRight />
 						</IconButton>
 					) : (
-						<SmallSideBar />
+						<SmallSideBar handleDrawerOpen={handleDrawerOpen} />
 					)}
 				</Grid>
 			</Drawer>
