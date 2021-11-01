@@ -1,15 +1,18 @@
 import React, { useContext, createContext } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import rtlPlugin from 'stylis-plugin-rtl';
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
 import initialState from './initial.theme';
-import { create } from 'jss';
-import rtl from 'jss-rtl';
-import { StylesProvider, jssPreset } from '@mui/styles';
 
 const ThemeContext = createContext(initialState);
 
-export const ApolloThemeProvider = props => {
+export const AppThemeProvider = props => {
 	const theme = createTheme(initialState);
-	const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+	const cacheRtl = createCache({
+		key: 'muirtl',
+		stylisPlugins: [rtlPlugin],
+	});
 
 	const { children } = props;
 
@@ -19,9 +22,9 @@ export const ApolloThemeProvider = props => {
 				theme,
 			}}
 			{...props}>
-			<StylesProvider jss={jss}>
+			<CacheProvider value={cacheRtl}>
 				<ThemeProvider theme={theme}>{children}</ThemeProvider>
-			</StylesProvider>
+			</CacheProvider>
 		</ThemeContext.Provider>
 	);
 };
