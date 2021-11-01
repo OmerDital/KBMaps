@@ -20,11 +20,9 @@ const renderStep = (direction) => {
   }
 
 const Step = ({direction}) => {
-    return (
         <StyledStep>
             {renderStep(direction)}
         </StyledStep>
-    )
 }
 
 export default Step
