@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import { Box, Divider, IconButton, Grid } from '@mui/material';
+import { Box, IconButton, Grid } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
-import { ChevronRight, MenuOutlined } from '@mui/icons-material';
+import { ChevronRight } from '@mui/icons-material';
+import SmallSideBar from './SmallSideBar';
 
 const openedMixin = () => ({
 	width: '15%',
@@ -16,6 +17,7 @@ const closedMixin = () => ({
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: prop => prop !== 'open' })(({ open }) => ({
 	width: '15%',
+	height: '100%',
 	...(open && {
 		...openedMixin(),
 		'& .MuiDrawer-paper': openedMixin(),
@@ -40,18 +42,15 @@ export default () => {
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<Drawer variant='permanent' open={open} anchor={'right'}>
-				<Grid container direction='Column' justifyContent='center' alignItems='flex-end'>
+				<Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
 					{open ? (
 						<IconButton onClick={handleDrawerClose}>
 							<ChevronRight />
 						</IconButton>
 					) : (
-						<IconButton onClick={handleDrawerOpen}>
-							<MenuOutlined />
-						</IconButton>
+						<SmallSideBar handleDrawerOpen={handleDrawerOpen} />
 					)}
 				</Grid>
-				<Divider />
 			</Drawer>
 		</Box>
 	);
