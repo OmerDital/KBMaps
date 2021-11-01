@@ -4,6 +4,7 @@ import { Box, IconButton, Grid } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import { ChevronRight } from '@mui/icons-material';
 import SmallSideBar from './SmallSideBar';
+import SearchBar from './SearchBar';
 
 const openedMixin = () => ({
 	width: '15%',
@@ -42,11 +43,14 @@ export default () => {
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<Drawer variant='permanent' open={open} anchor={'right'}>
-				<Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
+				<Grid container flexDirection='column' justifyContent='center' alignItems='flex-start'>
 					{open ? (
+						<>
 						<IconButton onClick={handleDrawerClose}>
 							<ChevronRight />
 						</IconButton>
+						<SearchBar/>
+						</>
 					) : (
 						<SmallSideBar handleDrawerOpen={handleDrawerOpen} />
 					)}
