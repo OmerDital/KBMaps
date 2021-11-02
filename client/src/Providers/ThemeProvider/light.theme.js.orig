@@ -2,19 +2,20 @@ export default {
   palette: {
     type: 'light',
     primary: {
+<<<<<<< HEAD
+      main: '#1648ff'
+    },
+    secondary: {
+      main: '#1648ff'
+=======
       main: '#426FE2'
     },
     secondary: {
       main: '#FF7999'
+>>>>>>> 67ab6b0 (wip)
     }
   },
   background: {
     default: '#1648ff'
-  },
-  typography: {
-    fontFamily: [
-      'sans-serif',
-      'Rubik'
-    ]
   }
 };

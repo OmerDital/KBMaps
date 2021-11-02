@@ -42,8 +42,13 @@ export default () => {
   };
 
   return (
+<<<<<<< HEAD
     <Box sx={{ display: 'flex' }}>
+      <Drawer variant='permanent' open={open} anchor={'left'}>
+=======
+      <Box sx={{ display: 'flex' }}>
         <Drawer variant='permanent' open={open} anchor={'left'}>
+>>>>>>> 9bde2b3 (wip)
           <Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
             {open ? (
                 <IconButton onClick={handleDrawerClose}>

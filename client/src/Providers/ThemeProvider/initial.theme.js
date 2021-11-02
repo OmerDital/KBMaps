@@ -7,7 +7,7 @@ export default {
   palette: {},
   ...lightTheme,
   typography: {
-    fontFamily: "'Open Sans', Roboto, sans-serif",
+    fontFamily: 'Rubik',
     button: {
       textTransform: 'none'
     }
