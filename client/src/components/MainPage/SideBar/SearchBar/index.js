@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import InputBase from '@mui/material/node/InputBase';
 // eslint-disable-next-line object-curly-newline
-import { FormLabel, Button, Divider, Grid } from '@mui/material';
+import {
+  TextField,
+  Button,
+  Divider,
+  Grid,
+  IconButton,
+  Tooltip
+} from '@mui/material';
 import { LocationOn } from '@mui/icons-material';
 import Step from './Step';
 
-const StyledInputBase = styled(InputBase)(() => ({
-  background: '#FFF',
-  paddingLeft: '1.2rem',
-  border: 'solid 1px #797979',
-  borderRadius: '.4rem',
-  marginBottom: '1.4rem',
-  width: '80%'
+const StyledDivider = styled(Divider)(() => ({
+  alignSelf: 'stretch',
+  width: '100%'
 }));
-
-const StyledDivider = styled(Divider)(() => ({ alignSelf: 'stretch', width: '100%' }));
 
 const Form = styled('form')(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  textAlign: 'end',
+  textAlign: 'center',
   marginTop: '7rem'
 }));
 
@@ -56,24 +56,36 @@ const SearchBar = () => {
   };
 
   return (
-    <Grid container flexDirection='column' justifyContent='center' alignItems='flex-end'>
+    <Grid
+      container
+      flexDirection='column'
+      justifyContent='center'
+      alignItems='flex-center'
+    >
       <Form onSubmit={onSubmit}>
         <div>
-          <FormLabel sx={{ color: '#426FE2' }}>מקור</FormLabel>
-          <br />
-          <LocationOn sx={{ verticalAlign: 'middle' }} />
-          <StyledInputBase
-            placeholder='תל אביב'
+          <Tooltip title='בחר מיקום על המפה'>
+            <IconButton color='secondary'>
+              <LocationOn sx={{ verticalAlign: 'middle' }} />
+            </IconButton>
+          </Tooltip>
+          <TextField
+            variant='outlined'
+            placeholder='מיקום התחלתי'
             value={origin}
             onChange={e => setOrigin(e.target.value)}
           />
         </div>
+        <br />
         <div>
-          <FormLabel sx={{ color: '#426FE2' }}>יעד</FormLabel>
-          <br />
-          <LocationOn sx={{ verticalAlign: 'middle' }} />
-          <StyledInputBase
-            placeholder='המכללה למנהל'
+          <Tooltip title='בחר מיקום על המפה'>
+            <IconButton color='secondary'>
+              <LocationOn sx={{ verticalAlign: 'middle' }} />
+            </IconButton>
+          </Tooltip>
+          <TextField
+            variant='outlined'
+            placeholder='יעד'
             value={destination}
             onChange={e => setDestination(e.target.value)}
           />
@@ -83,9 +95,10 @@ const SearchBar = () => {
           type='submit'
           variant='contained'
           sx={{
-            width: '80%',
+            width: 'auto',
             alignSelf: 'center'
-          }}>
+          }}
+        >
           חישוב מסלול
         </Button>
         <br />

@@ -10,7 +10,7 @@ import SmallSideBar from './SmallSideBar';
 import SearchBar from './SearchBar';
 import logo from '../../../assests/logo.svg';
 
-const openedMixin = () => ({ width: '15%', overflowX: 'hidden' });
+const openedMixin = () => ({ width: '23%', overflowX: 'hidden' });
 
 const closedMixin = () => ({ overflowX: 'hidden', width: '5%' });
 
@@ -48,7 +48,7 @@ export default () => {
           display='flex'
           flexDirection='column'
           justifyContent='center'
-          alignItems='flex-start'
+          alignItems='flex-center'
         >
           {open ? (
             <div>
