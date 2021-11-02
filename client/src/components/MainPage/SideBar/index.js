@@ -61,7 +61,7 @@ export default () => {
                   height: 'auto',
                   transform: 'scale(.8)',
                   position: 'absolute',
-                  left: 20
+                  marginLeft: '10%'
                 }}
               >
                 <img src={logo} alt='logo' />

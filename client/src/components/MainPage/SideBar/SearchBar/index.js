@@ -71,7 +71,7 @@ const SearchBar = () => {
           </Tooltip>
           <TextField
             variant='outlined'
-            placeholder='מיקום התחלתי'
+            label='מיקום התחלתי'
             value={origin}
             onChange={e => setOrigin(e.target.value)}
           />
@@ -85,7 +85,7 @@ const SearchBar = () => {
           </Tooltip>
           <TextField
             variant='outlined'
-            placeholder='יעד'
+            label='יעד'
             value={destination}
             onChange={e => setDestination(e.target.value)}
           />
