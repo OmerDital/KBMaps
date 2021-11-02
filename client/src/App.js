@@ -1,10 +1,22 @@
 import React from 'react';
-import MainPage from './components/MainPage';
+import {
+  BrowserRouter as Router,
+  Switch
+} from 'react-router-dom';
+
 import { AppProviders } from './Providers';
+import RouteWithSubRoutes from './components/RouteWithSubRoutes';
+import routes from './routes';
 
 const App = () => (
   <AppProviders>
-    <MainPage />
+      <Router>
+        <Switch>
+          {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route} />
+          ))}
+        </Switch>
+      </Router>
   </AppProviders>
 );
 

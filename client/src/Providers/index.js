@@ -1,4 +1,11 @@
 import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { AppThemeProvider } from './ThemeProvider';
 
-export const AppProviders = ({ children }) => <AppThemeProvider>{children}</AppThemeProvider>;
+const queryClient = new QueryClient();
+
+export const AppProviders = ({ children }) => <AppThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        {children}
+      </QueryClientProvider>
+    </AppThemeProvider>;

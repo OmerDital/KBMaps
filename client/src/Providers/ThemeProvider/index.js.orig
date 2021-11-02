@@ -17,6 +17,17 @@ export const AppThemeProvider = props => {
   const { children } = props;
 
   return (
+<<<<<<< HEAD
+    <ThemeContext.Provider
+      value={{
+        theme
+      }}
+      {...props}>
+      <CacheProvider value={cacheRtl}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </CacheProvider>
+    </ThemeContext.Provider>
+=======
       <ThemeContext.Provider
           value={{
             theme
@@ -26,6 +37,7 @@ export const AppThemeProvider = props => {
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </CacheProvider>
       </ThemeContext.Provider>
+>>>>>>> 67ab6b0 (wip)
   );
 };
 

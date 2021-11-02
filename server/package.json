@@ -22,7 +22,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec babel-node src"
+    "dev": "nodemon --exec babel-node --inspect src"
   },
   "author": "HN",
   "license": "ISC"
